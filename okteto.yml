@@ -1,0 +1,17 @@
+name: hello
+labels:
+  app.kubernetes.io/component: hello
+image: okteto/gradle:6.5
+command: bash
+volumes:
+- /home/gradle/.gradle
+sync:
+- .:/usr/src/app
+forward:
+- 5005:5005 # debugger
+- 8080:8080 # spring
+- 8000:8000 # fitnesse
+resources:
+  limits:
+    cpu: "1"
+    memory: 2Gi
