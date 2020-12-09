@@ -1,7 +1,7 @@
 name: hello
-labels:
-  app.kubernetes.io/component: hello
-image: okteto/gradle:6.5
+image: 
+  name: okteto.dev/hello:dev
+  target: build
 command: bash
 volumes:
 - /home/gradle/.gradle

@@ -28,6 +28,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.fitnesse:fitnesse:20200501")
+    compile("smartrics.restfixture:smartrics-RestFixture:4.4")
     dev("org.springframework.boot:spring-boot-devtools")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     
@@ -41,5 +42,5 @@ bootRun {
 task fitnesse(type: JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
   main = "fitnesseMain.FitNesseMain"
-  args "-p", "8000", "-e", "0", "-d", "fitnesse"
+  args "-p", "8000", "-e", "0", "-d", "."
 }
