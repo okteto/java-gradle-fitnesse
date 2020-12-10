@@ -1,9 +1,0 @@
-name: hello
-services:
-  hello:
-    public: true
-    image: okteto.dev/hello
-    build: .
-    replicas: 1
-    ports: 
-    - 8080
