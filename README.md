@@ -1,5 +1,7 @@
 # Develop an Application with Java, Gradle, Sprint and Fitnesse
 
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy)
+
 This sample shows you how to develop a rest service using spring, and how to test it with [FitNesse](http://fitnesse.org/) using a remote development environment deployed with Okteto.
 
 ## Login to Okteto 
