@@ -1,6 +1,6 @@
-name: hello
+name: devenv
 image: 
-  name: okteto.dev/hello:dev
+  name: okteto.dev/java-fitness:dev
   target: build
 command: bash
 volumes:
@@ -8,8 +8,6 @@ volumes:
 sync:
 - .:/usr/src/app
 forward:
-- 5005:5005 # debugger
-- 8080:8080 # spring
 - 8000:8000 # fitnesse
 resources:
   limits:

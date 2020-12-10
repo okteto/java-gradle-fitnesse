@@ -1,4 +1,0 @@
-deploy:
-  - git clone https://github.com/rberrelleza/java-gradle-fitnesse-manifests /tmp/manifests
-  - okteto build -t okteto.dev/java-fitnesse-demo:${OKTETO_GIT_COMMIT}
-  - IMAGE=okteto.dev/java-fitnesse-demo:${OKTETO_GIT_COMMIT} envsubst < /tmp/manifests/application/manifest.yaml | kubectl apply -f -
