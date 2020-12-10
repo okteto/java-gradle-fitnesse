@@ -1,6 +1,6 @@
 # Develop an Application with Java, Gradle, Sprint and Fitnesse
 
-This sample shows you how to develop a rest service using spring, and how to test it with [Fitnesse](http://fitnesse.org/) using a remote development environment deployed with Okteto.
+This sample shows you how to develop a rest service using spring, and how to test it with [FitNesse](http://fitnesse.org/) using a remote development environment deployed with Okteto.
 
 ## Login to Okteto 
 
@@ -10,9 +10,9 @@ This sample shows you how to develop a rest service using spring, and how to tes
 > If running in okteto cloud, remove the URL parameter.
 
 
-## Deploy the Application
+## Deploy the Application under test
 
-    $ okteto stack deploy --build
+    $ okteto pipeline deploy
 
 The application can be accessed via the https endpoint displayed in the Okteto UI.
 
@@ -22,24 +22,16 @@ The application can be accessed via the https endpoint displayed in the Okteto U
     
         $ okteto up --build
   
-   The remote development environment is already configured with all the tools you need, and all your files will be synchronized between your local machine and the remote development environment. You can perform all your development tasks there, such as: build your code, start the application, run your tests, etc...
+   The remote development environment is already configured with all the tools you need, and all your files will be synchronized between your local machine and the remote development environment. You can perform all your development tasks there, such as: build your application, redeploy the application, run your tests, etc...
   
-1. Start the service in the remote terminal 
+1. Start the `FitNesse` server in the remote terminal: 
     
-        root@hello-556fb8588-csglf:/usr/src/app# gradle bootRun
-  
-    The spring app is now available on http://localhost:8080, or over the https endpoint displayed in the okteto UI
+        root@hello-556fb8588-csglf:/usr/src/app# ./run-fitnesse.sh
 
-1. In your local machine, start a second terminal, and access your remote environment with the `okteto exec --bash` command:
-    
-        $ okteto exec -- bash
+    The `FitNesse` server is now available on http://localhost:8080. You can now proceed to run your own tests there.
 
-1. Start the `FitNesse` server in the new remote terminal: 
-    
-        root@hello-556fb8588-csglf:/usr/src/app# okteto exec -- gradle fitnesse 
-
-    The `FitNesse` server is now available on http://localhost:8000. You can now proceed to run your own tests there.
+1. At any time, you can run `./run-app.sh` to build and redeploy the application with your latest changes. You can also run `okteto push` from your local machine.
 
 ## Test Your Changes
 
-... work in progress ...
+Go to http://localhost:8080 and write and run your tests using FitNesse.
