@@ -18,6 +18,8 @@ This sample shows you how to develop a rest service using spring, and how to tes
 
 The application can be accessed via the https endpoint displayed in the Okteto UI.
 
+> You can also click the green button above
+
 ## Development Workflow
 
 1. Launch your remote development environment by running the `okteto up` command: 
